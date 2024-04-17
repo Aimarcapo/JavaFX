@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.shape.*?>
+<?import javafx.scene.image.*?>
+<?import javafx.scene.control.*?>
+<?import java.lang.*?>
+<?import javafx.scene.layout.*?>
+
+<AnchorPane fx:id="paneGeneral" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400" prefWidth="600" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="memorygame.JuegoController">
+   <children>
+      <Label layoutX="14.0" layoutY="14.0" text="Número de aciertos" />
+      <Label layoutX="452.0" layoutY="14.0" text="Tiempo (s)" />
+      <Label fx:id="aciertos" layoutX="47.0" layoutY="41.0" />
+      <Label fx:id="segundos" layoutX="467.0" layoutY="41.0" />
+      <AnchorPane fx:id="juegoPane" layoutY="91.0" maxHeight="218.0" maxWidth="400.0" prefHeight="-Infinity" prefWidth="-Infinity" AnchorPane.bottomAnchor="91.0" AnchorPane.leftAnchor="100.0" AnchorPane.rightAnchor="100.0" AnchorPane.topAnchor="91.0" />
+   </children>
+</AnchorPane>
