@@ -9,7 +9,8 @@ public class PrimaryController {
     private void switchToSecondary() throws IOException {
         App.setRoot("juego");
        JuegoController controlador = App.getLoader().getController();
-       controlador.initializeWithData(4, 60);
+
+       //controlador.initializeWithData(4, 60);
 
     }
 }

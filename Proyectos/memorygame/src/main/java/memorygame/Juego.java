@@ -24,18 +24,32 @@ public class Juego {
         }
         barajarCartas();
     }
-    public int getDimension(){
+
+    public int getDimension() {
         return dimension;
     }
-    public int getAciertos(){
+/* 
+    public void acertado() {
+    
+        contadorAciertos++;
+    }
+ */
+    public int getAciertos() {
         return contadorAciertos;
     }
-    public int[][] getTablero(){
+
+    public int[][] getTablero() {
         return tablero;
     }
-    public int[][] getCartas(){
+
+    public int[][] getCartas() {
         return cartas;
     }
+
+    public int getCarta(int row, int column) {
+        return cartas[row][column];
+    }
+
     private void barajarCartas() {
         cartas = new int[dimension][dimension];
 
@@ -45,7 +59,7 @@ public class Juego {
 
             i = pos / dimension;
             j = pos - i * dimension;
-            
+
             cartas[i][j] = n;
             pos++;
             i = pos / dimension;
@@ -76,11 +90,10 @@ public class Juego {
         tablero[i][j] = 0;
     }
 
-    public void resetearJugada(){
+    public void resetearJugada() {
         primeraCartaPos = -1;
-        
-    }
 
+    }
 
     public boolean sonPareja(int i1, int j1, int i2, int j2) {
 
@@ -96,29 +109,34 @@ public class Juego {
     public boolean isGameOver() {
         return contadorAciertos == numParejas;
     }
-    public boolean esPrimera(){
-        return primeraCartaPos ==-1;
+
+    public boolean esPrimera() {
+        return primeraCartaPos == -1;
     }
-    public int getPRimeraFila(){
-        return primeraCartaPos/dimension;
+
+    public int getPRimeraFila() {
+        return primeraCartaPos / dimension;
     }
-    public int getPRimeraColumna(){
-        return primeraCartaPos - getPRimeraFila()*dimension;
+
+    public int getPRimeraColumna() {
+        return primeraCartaPos % dimension;
+        // return primeraCartaPos - getPRimeraFila()*dimension;
     }
+
     public boolean levantarCarta(int i, int j) {
         // mostrarCarta
         mostrarCarta(i, j);
-        if(primeraCartaPos==-1){
-            primeraCartaPos=i*dimension+j;
+        if (primeraCartaPos == -1) {
+            primeraCartaPos = i * dimension + j;
             return false;
-        }else{
-            int i1 = primeraCartaPos/dimension;
-            int j1 = primeraCartaPos-i1*dimension;
-           
-            if(sonPareja(i1, j1, i, j)){
+        } else {
+            int i1 = primeraCartaPos / dimension;
+            int j1 = primeraCartaPos - i1 * dimension;
+
+            if (sonPareja(i1, j1, i, j)) {
                 return true;
-            }else{
-                
+            } else {
+
                 return false;
             }
         }
